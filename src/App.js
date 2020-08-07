@@ -1,15 +1,15 @@
-import React, { Fragment, useState } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Navbar from "./components/layout/Navbar"
-import Users from "./components/users/Users"
-import User from "./components/users/User"
-import Search from "./components/users/Search"
-import Alert from "./components/layout/Alert"
+import React, { Fragment, useState } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
+import Users from './components/users/Users'
+import User from './components/users/User'
+import Search from './components/users/Search'
+import Alert from './components/layout/Alert'
 
-import axios from "axios"
+import axios from 'axios'
 
-import "./App.css"
-import About from "./components/pages/About"
+import './App.css'
+import About from './components/pages/About'
 
 const App = () => {
   const [users, setUsers] = useState([])
@@ -68,14 +68,14 @@ const App = () => {
 
   return (
     <Router>
-      <div className="App">
+      <div className='App'>
         <Navbar />
-        <div className="container">
+        <div className='container'>
           <Alert alert={alert} />
           <Switch>
             <Route
               exact
-              path="/"
+              path='/'
               render={props => (
                 <Fragment>
                   <Search
@@ -88,10 +88,10 @@ const App = () => {
                 </Fragment>
               )}
             />
-            <Route exact path="/about" component={About} />
+            <Route exact path='/about' component={About} />
             <Route
               exact
-              path="/user/:login"
+              path='/user/:login'
               render={props => (
                 <User
                   {...props}
